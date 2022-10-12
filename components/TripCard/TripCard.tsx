@@ -49,7 +49,7 @@ export const TripCard: FunctionComponent<TripCardProps> = ({
           {description}
         </p>
         <Link href={`/trip/${id}/register`}>
-          <Button className="wt-trip-card__cta" color="gold" type="button">let's go!</Button>
+          <Button className="wt-trip-card__cta" color="gold" type="button">let&rsquo;s go!</Button>
         </Link>
       </div>
       <TripCategory category={category} className="wt-trip-card__category" />
