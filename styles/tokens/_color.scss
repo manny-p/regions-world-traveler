@@ -1,0 +1,23 @@
+////
+/// Color Tokens
+/// @group tokens
+////
+
+$wt-colors: (
+  grey-100: #eeeff2,
+  grey-500: #888888,
+  grey-800: #333333,
+  gold-100: #ffd993,
+  gold-500: #f7b500,
+  gold-800: #9e7515,
+  cyan-100: #b0e2ff,
+  cyan-500: #32c5ff,
+  cyan-800: #2e7fa2,
+  kelly-100: #a6cc8f,
+  kelly-500: #42991a,
+  kelly-800: #397e1a,
+);
+
+@function wt-color($key) {
+  @return map-get($wt-colors, $key);
+}

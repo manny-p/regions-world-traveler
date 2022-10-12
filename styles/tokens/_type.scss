@@ -1,0 +1,121 @@
+////
+/// Type and Font Tokens
+/// @group tokens
+////
+
+///
+/// Fonts
+///
+$wt-fonts: (
+  body: ('Source Sans Pro', sans-serif),
+);
+
+@function wt-font($key) {
+  @return map-get($wt-fonts, $key);
+}
+
+///
+/// Type spec sets
+///
+$wt-type-specs: (
+  body: (
+    font: wt-font(body),
+    leading: rem(20),
+    kerning: 0,
+    size: rem(16),
+    weight: 400,
+    transform: none,
+  ),
+  body-b: (
+    font: wt-font(body),
+    leading: rem(16),
+    kerning: 0,
+    size: rem(16),
+    weight: 700,
+    transform: none,
+  ),
+  display-1: (
+    font: wt-font(body),
+    leading: rem(60),
+    kerning: rem(-0.9),
+    size: rem(48),
+    weight: 300,
+    transform: none,
+  ),
+  display-2: (
+    font: wt-font(body),
+    leading: rem(38),
+    kerning: rem(-0.3),
+    size: rem(30),
+    weight: 700,
+    transform: none,
+  ),
+  display-3: (
+    font: wt-font(body),
+    leading: rem(31),
+    kerning: rem(-0.3),
+    size: rem(24),
+    weight: 700,
+  ),
+  display-4: (
+    font: wt-font(body),
+    leading: rem(20),
+    kerning: rem(0.91),
+    size: rem(16),
+    weight: 700,
+    transform: uppercase,
+  ),
+  display-5: (
+    font: wt-font(body),
+    leading: rem(18),
+    kerning: rem(1),
+    size: rem(14),
+    weight: 700,
+    transform: uppercase,
+  ),
+  display-6: (
+    font: wt-font(body),
+    leading: rem(18),
+    kerning: rem(.5),
+    size: rem(14),
+    weight: 600,
+    transform: uppercase,
+  ),
+  lead: (
+    font: wt-font(body),
+    leading: rem(28),
+    kerning: 0,
+    size: rem(18),
+    weight: 400,
+    transform: none,
+  ),
+);
+
+@function wt-type-spec($key, $subkey) {
+  $spec: map-get($wt-type-specs, $key);
+
+  @if ($subkey) {
+    @return map-get($spec, $subkey);
+  }
+
+  @return $spec;
+}
+
+@mixin wt-type-spec($spec) {
+  font-family: wt-type-spec($spec, font);
+  font-size: wt-type-spec($spec, size);
+  font-weight: wt-type-spec($spec, weight);
+  letter-spacing: wt-type-spec($spec, kerning);
+  line-height: wt-type-spec($spec, leading);
+  text-transform: wt-type-spec($spec, transform);
+}
+
+///
+/// Type spec classes and placeholders
+///
+@each $key, $value in $wt-type-specs {
+  .t-wt-#{$key},
+  %t-wt-#{$key} {
+    @include wt-type-spec($key);
+  }
+}

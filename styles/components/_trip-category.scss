@@ -1,0 +1,26 @@
+////
+/// Trip Category component
+/// @group components
+////
+
+$wt-trip-category-border-size: rem(5);
+
+.trip-category {
+  @extend %t-wt-display-6;
+  
+  color: wt-color(grey-800);
+  background-color: white;
+  width: max-content;
+  height: max-content;
+  border-left: $wt-trip-category-border-size solid wt-color(grey-500);
+  padding: rem(4) rem(7);
+  transform: translateX(-$wt-trip-category-border-size);
+}
+
+.trip-category--domestic {
+  border-left-color: wt-color(cyan-500);
+}
+
+.trip-category--international {
+  border-left-color: wt-color(gold-500);
+}

@@ -1,0 +1,13 @@
+////
+/// Functions
+/// @group functions
+/// 
+/// NOTE: Functions related directly to tokens are contained in that token's file.
+////
+
+///
+/// Converts provided integer (assumes pixels) to a rem value from base 16
+/// 
+@function rem($value, $base: 16) {
+  @return calc($value / $base * 1rem);
+}

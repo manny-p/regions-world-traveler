@@ -1,0 +1,39 @@
+blockquote:not([class]),
+dd:not([class]),
+li:not([class]),
+p:not([class]),
+td:not([class]) {
+  @extend %t-wt-body;
+}
+
+b:not([class]),
+strong:not([class]) {
+  @extend %t-wt-body-b;
+}
+
+h1:not([class]) {
+  @extend %t-wt-display-1;
+}
+
+h2:not([class]) {
+  @extend %t-wt-display-2;
+}
+
+h3:not([class]),
+th:not([class]) {
+  @extend %t-wt-display-3;
+}
+
+h4:not([class]) {
+  @extend %t-wt-display-4;
+}
+
+dt:not([class]),
+h5:not([class]),
+label:not([class]) {
+  @extend %t-wt-display-5;
+}
+
+h6:not([class]) {
+  @extend %t-wt-display-6;
+}

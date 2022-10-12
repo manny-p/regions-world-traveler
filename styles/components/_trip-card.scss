@@ -1,0 +1,175 @@
+////
+/// Trip Card
+/// @group components
+////
+
+$wt-trip-card-breakpoint-sm-min: 600px;
+$wt-trip-card-breakpoint-sm-max: 599px;
+$wt-trip-card-breakpoint-md-min: 800px;
+$wt-trip-card-breakpoint-md-max: 799px;
+$wt-trip-card-spacing: rem(20);
+$wt-trip-card-spacing-featured: rem(30);
+
+
+.trip-card {
+  --trip-card-spacing: #{$wt-trip-card-spacing};
+
+  display: grid;
+  align-items: center;
+  gap: var(--trip-card-spacing);
+  background-color: white;
+  position: relative;
+
+  @media (max-width: $wt-trip-card-breakpoint-sm-max) {
+    width: rem(300);
+  }
+
+  @media (min-width: $wt-trip-card-breakpoint-sm-min) {
+    width: auto;
+  }
+
+  @media (max-width: $wt-trip-card-breakpoint-md-max) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "content";
+  }
+
+  @media (min-width: $wt-trip-card-breakpoint-md-min) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "image content";
+  }
+}
+
+.trip-card--featured {
+  --trip-card-spacing: #{$wt-trip-card-spacing-featured};
+
+  grid-column: 1 / -1;
+
+  @media (max-width: $wt-trip-card-breakpoint-sm-max) {
+    width: auto;
+  }
+}
+
+.trip-card__category {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: max-content;
+  margin-top: rem(10);
+  align-self: start;
+
+  .trip-card--featured & {
+    margin-top: rem(20);
+  }
+}
+
+.trip-card__content-wrapper {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  padding-right: var(--trip-card-spacing);
+  padding-bottom: var(--trip-card-spacing);
+
+  @media (max-width: $wt-trip-card-breakpoint-md-max) {
+    padding-top: 0;
+    padding-left: var(--trip-card-spacing);
+  }
+
+  @media (min-width: $wt-trip-card-breakpoint-md-min) {
+    padding-top: var(--trip-card-spacing);
+    padding-left: 0;
+  }
+}
+
+.trip-card__date {
+  @extend %t-wt-display-5;
+  
+  color: wt-color(grey-800);
+
+  .trip-card--featured & {
+    @extend %t-wt-display-4;
+  }
+}
+
+.trip-card__description {
+  @extend %t-wt-body;
+  
+  color: wt-color(grey-800);
+
+  .trip-card--featured & {
+    @extend %t-wt-lead;
+  }
+}
+
+.trip-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+}
+
+.trip-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trip-card__image-wrapper {
+  display: block;
+  grid-area: image;
+  height: 100%;
+}
+
+.trip-card__location {
+  @extend %t-wt-display-3;
+  
+  color: wt-color(grey-800);
+  order: 2;
+
+  .trip-card--featured & {
+    @extend %t-wt-display-2;
+  }
+}
+
+.trip-card__location-link {
+  text-decoration: none;
+  color: inherit;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:focus {
+    outline: 0;
+
+    &::after {
+      outline: 5px solid wt-color(cyan-500);
+    }
+  }
+}
+
+.trip-card__status {
+  @extend %t-wt-display-6;
+  
+  color: wt-color(grey-500);
+}
+
+.trip-card-set {
+  display: grid;
+  justify-items: center;
+  gap: rem(30);
+
+  @media (max-width: $wt-trip-card-breakpoint-sm-max) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: $wt-trip-card-breakpoint-sm-min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
