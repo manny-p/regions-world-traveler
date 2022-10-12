@@ -1,8 +1,14 @@
+import { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { TripCard } from './TripCard';
+import { TripCard, TripCardProps } from './TripCard';
 
-export const TripCardSet = ({ items }) => {
-  const classNames = classnames('trip-card-set');
+export type TripCardSetProps = {
+  className?: string;
+  items: TripCardProps[];
+}
+
+export const TripCardSet: FunctionComponent<TripCardSetProps> = ({ className, items }) => {
+  const classNames = classnames('wt-trip-card-set', className);
 
   return (
     <ul className={classNames}>

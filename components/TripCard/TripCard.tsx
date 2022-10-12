@@ -1,8 +1,8 @@
+import type { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { FunctionComponent } from 'react';
-import { Trip } from '../../types';
 import { TripCategory } from '..';
 import Link from 'next/link';
+import { Trip } from '../../types';
 
 export type TripCardProps = Trip;
 
@@ -19,37 +19,36 @@ export const TripCard: FunctionComponent<TripCardProps> = ({
   const DEFAULT_STATUS = 'register now';
 
   const classNames = classnames(
-    'trip-card',
+    'wt-trip-card',
     {
-      'trip-card--featured': featured,
+      'wt-trip-card--featured': featured,
     },
   );
 
   return (
     <li id={`trip-card-${id}`} className={classNames} role="listitem">
-      <div className="trip-card__content-wrapper">
-        <div className="trip-card__header">
-          <h2 className="trip-card__location">
+      <div className="wt-trip-card__content-wrapper">
+        <div className="wt-trip-card__header">
+          <h2 className="wt-trip-card__location">
             <Link href={`/trip/${id}`}>
-              <a className="trip-card__location-link">
+              <a className="wt-trip-card__location-link">
                 {location}
               </a>
             </Link>
           </h2>
-          <strong className="trip-card__status">
             {status || DEFAULT_STATUS}
           </strong>
         </div>
-        <p className="trip-card__date">
+        <p className="wt-trip-card__date">
           {date}
         </p>
-        <p className="trip-card__description">
+        <p className="wt-trip-card__description">
           {description}
         </p>
       </div>
-      <TripCategory category={category} className="trip-card__category" />
-      <div className="trip-card__image-wrapper">
-        <img className="trip-card__image" src={image} alt="" />
+      <TripCategory category={category} className="wt-trip-card__category" />
+      <div className="wt-trip-card__image-wrapper">
+        <img className="wt-trip-card__image" src={image} alt="" />
       </div>
     </li>
   );

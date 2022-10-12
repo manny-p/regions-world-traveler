@@ -8,7 +8,8 @@ const TripDetailsPage = () => (
       <meta name="description" content="A travel site you'll love to use for your next trip!" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <p>Trip details page coming soon!</p>
+    <h2>Trip details</h2>
+    <p>Coming soon!</p>
   </App>
 );
 

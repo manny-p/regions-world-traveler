@@ -5,7 +5,7 @@
 
 $wt-trip-category-border-size: rem(5);
 
-.trip-category {
+.wt-trip-category {
   @extend %t-wt-display-6;
   
   color: wt-color(grey-800);
@@ -17,10 +17,10 @@ $wt-trip-category-border-size: rem(5);
   transform: translateX(-$wt-trip-category-border-size);
 }
 
-.trip-category--domestic {
+.wt-trip-category--domestic {
   border-left-color: wt-color(cyan-500);
 }
 
-.trip-category--international {
+.wt-trip-category--international {
   border-left-color: wt-color(gold-500);
 }

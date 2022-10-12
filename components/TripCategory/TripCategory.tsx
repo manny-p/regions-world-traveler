@@ -1,11 +1,18 @@
+import type { FunctionComponent } from 'react';
 import classnames from 'classnames';
+import { Category } from '../../types';
 
-export const TripCategory = ({ category, className }) => {
+export type TripCategoryProps = {
+  category: Category;
+  className: string;
+};
+
+export const TripCategory: FunctionComponent<TripCategoryProps> = ({ category, className }) => {
   const classNames = classnames(
-    'trip-category',
+    'wt-trip-category',
     className,
     {
-      [`trip-category--${category}`]: category,
+      [`wt-trip-category--${category}`]: category,
     }
   );
 

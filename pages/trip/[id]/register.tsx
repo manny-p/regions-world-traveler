@@ -8,7 +8,8 @@ const RegisterPage = () => (
       <meta name="description" content="A travel site you'll love to use for your next trip!" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <p>Register for a trip coming soon!</p>
+    <h2>Trip registration</h2>
+    <p>Coming soon!</p>
   </App>
 );
 

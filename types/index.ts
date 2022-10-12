@@ -1,5 +1,7 @@
+export type Category = 'domestic' | 'international';
+
 export type Trip = {
-  category: string;
+  category: Category;
   date: string;
   description: string;
   featured: boolean,

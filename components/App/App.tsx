@@ -1,4 +1,5 @@
-import { FunctionComponent, ReactNode } from "react";
+import type { FunctionComponent, ReactNode } from 'react';
+import Link from 'next/link';
 
 export type AppType = {
   children?: ReactNode;
@@ -7,7 +8,11 @@ export type AppType = {
 export const App: FunctionComponent<AppType> = ({ children }) => (
   <div className="wt-app">
     <header className="wt-app__header">
-      <h1>World Traveler</h1>
+      <Link href="/">
+        <a>
+          <h1>World Traveler</h1>
+        </a>
+      </Link>
     </header>
     <main className="wt-app__main">
       {children}
