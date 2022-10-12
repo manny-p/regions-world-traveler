@@ -1,24 +1,56 @@
 ////
-/// Button component
+/// Button
 /// @group components
 ////
+
+$wt-button-colors: (
+  grey: (
+    background-default: wt-color(grey-500),
+    background-hover: wt-color(grey-800),
+  ),
+  gold: (
+    background-default: wt-color(gold-500),
+    background-hover: wt-color(gold-800),
+  ),
+  cyan: (
+    background-default: wt-color(cyan-500),
+    background-hover: wt-color(cyan-800),
+  ),
+  kelly: (
+    background-default: wt-color(kelly-500),
+    background-hover: wt-color(kelly-800),
+  ),
+);
+
+:root {
+  --wt-button-background-color: black;
+}
 
 .wt-button {
   @extend %t-wt-display-4;
 
   border: 0;
-  background-color: wt-color(cyan-500);
+  background-color: var(--wt-button-background-color);
   color: white;
   padding: rem(15) rem(30);
   display: inline-flex;
   text-align: center;
 
-  &:hover {
-    background-color: wt-color(cyan-800);
-    cursor: pointer;
-  }
-
   &:focus {
     outline: 4px solid wt-color(grey-800);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@each $key, $map in $wt-button-colors {
+  .wt-button--color-#{$key} {
+    --wt-button-background-color: #{map-get($map, background-default)};
+  
+    &:hover {
+      --wt-button-background-color: #{map-get($map, background-hover)};
+    }
   }
 }

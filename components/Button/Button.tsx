@@ -14,9 +14,9 @@ export const Button: FunctionComponent<ButtonProps> = ({
   children,
   className,
   color = 'grey',
-  href,
-  onClick,
-  type,
+  href = null,
+  onClick = null,
+  type = 'button',
 }) => {
   const classNames = classnames(
     'wt-button',

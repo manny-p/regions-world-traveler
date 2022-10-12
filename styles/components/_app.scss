@@ -1,3 +1,8 @@
+////
+/// App
+/// @group components
+////
+
 .wt-app {
   max-width: 1170px;
   margin: 0 auto;
@@ -14,14 +19,6 @@
     position: relative;
     display: inline-block;
 
-    &:focus {
-      outline: 0;
-
-      &::after {
-        outline: 4px solid wt-color(grey-800);
-      }
-    }
-
     &::after {
       content: '';
       position: absolute;
@@ -30,14 +27,20 @@
       bottom: rem(0);
       left: rem(-10);
     }
+
+    &:focus {
+      outline: 0;
+
+      &::after {
+        outline: 4px solid wt-color(grey-800);
+      }
+    }
   }
 
   h1 {
     color: wt-color(grey-800);
   }
 }
-
-.wt-app__main {}
 
 .wt-app__footer {
   text-align: center;
