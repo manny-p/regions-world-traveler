@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'react';
 import classnames from 'classnames';
-import { TripCategory } from '..';
 import Link from 'next/link';
 import { Trip } from '../../types';
+import { Button, TripCategory } from '..';
 
 export type TripCardProps = Trip;
 
@@ -36,8 +36,11 @@ export const TripCard: FunctionComponent<TripCardProps> = ({
               </a>
             </Link>
           </h2>
-            {status || DEFAULT_STATUS}
-          </strong>
+          {status && (
+            <strong className="wt-trip-card__status">
+              {status || DEFAULT_STATUS}
+            </strong>
+          )}
         </div>
         <p className="wt-trip-card__date">
           {date}
@@ -45,6 +48,9 @@ export const TripCard: FunctionComponent<TripCardProps> = ({
         <p className="wt-trip-card__description">
           {description}
         </p>
+        <Link href={`/trip/${id}/register`}>
+          <Button className="wt-trip-card__cta" color="gold" type="button">let's go!</Button>
+        </Link>
       </div>
       <TripCategory category={category} className="wt-trip-card__category" />
       <div className="wt-trip-card__image-wrapper">

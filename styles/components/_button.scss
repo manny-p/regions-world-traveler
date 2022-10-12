@@ -1,0 +1,24 @@
+////
+/// Button component
+/// @group components
+////
+
+.wt-button {
+  @extend %t-wt-display-4;
+
+  border: 0;
+  background-color: wt-color(cyan-500);
+  color: white;
+  padding: rem(15) rem(30);
+  display: inline-flex;
+  text-align: center;
+
+  &:hover {
+    background-color: wt-color(cyan-800);
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 4px solid wt-color(grey-800);
+  }
+}

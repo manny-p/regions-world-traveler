@@ -82,6 +82,13 @@ $wt-trip-card-spacing-featured: rem(30);
   }
 }
 
+.wt-trip-card__cta {
+  position: relative;
+  z-index: 10;
+  margin-top: rem(10);
+  align-self: start;
+}
+
 .wt-trip-card__date {
   @extend %t-wt-display-5;
   
